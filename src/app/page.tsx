@@ -1,19 +1,28 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
-import ServicesPreview from "@/components/ServicesPreview";
-import WorkAndAbout from "@/components/WorkAndAbout";
+import Hero from "@/components/home/Hero";
+import Moments from "@/components/home/Moments";
+import SceneDemo from "@/components/home/SceneDemo";
+import DayInTheLife from "@/components/home/DayInTheLife";
+import Feelings from "@/components/home/Feelings";
+import Details from "@/components/home/Details";
+import AlreadyHome from "@/components/home/AlreadyHome";
+import HowItWorks from "@/components/home/HowItWorks";
+import FinalCta from "@/components/FinalCta";
 
+// Story order: desire (hero) → recognise the pain → feel the control →
+// picture a whole day → name the emotional payoff → admire the details →
+// trust (real buildings) → a small, safe first step → act.
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="flex-1">
-        <HeroSection />
-        <ServicesPreview />
-        <WorkAndAbout />
-      </main>
-      <Footer />
+      <Hero />
+      <Moments />
+      <SceneDemo />
+      <DayInTheLife />
+      <Feelings />
+      <Details />
+      <AlreadyHome />
+      <HowItWorks />
+      <FinalCta />
     </>
   );
 }

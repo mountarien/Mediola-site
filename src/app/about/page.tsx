@@ -1,117 +1,92 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import FinalCta from "@/components/FinalCta";
+import { Eyebrow, PageHeader } from "@/components/ui";
 
-const strengths = [
+export const metadata: Metadata = {
+  title: "Our story",
+  description:
+    "Mediola designs and installs smart home systems in the UAE, built around how people actually live.",
+};
+
+const beliefs = [
   {
-    title: "Reliable installs, done right the first time",
-    description:
-      "Our technicians are trained to deliver clean, tested, dependable systems.",
+    title: "Your home should adapt to you",
+    text: "Not the other way around. We start with your routines and design the system to fit them — never a generic package.",
   },
   {
-    title: "Custom, not cookie-cutter",
-    description:
-      "Every property gets a solution designed for it, not a generic package.",
+    title: "Simple beats impressive",
+    text: "If your parents can’t use it on the first day, it isn’t finished. Every system we hand over is easy to live with.",
   },
   {
-    title: "A trusted network behind every project",
-    description:
-      "Access to a wide range of proven smart home technology, matched to your project's needs.",
+    title: "Done right, the first time",
+    text: "Our own trained technicians install, test and explain everything — and we stay a phone call away afterwards.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
-      
-      <main className="relative min-h-screen overflow-hidden bg-white text-slate-900">
-        {/* Background Logo Watermark (Centered) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0">
+      <PageHeader
+        eyebrow="Our story"
+        title={
+          <>
+            We believe home should be the one place you <em className="text-amber-700">don’t have to think.</em>
+          </>
+        }
+      >
+        <p>
+          Mediola brings smart living to homes across the UAE. For the past
+          few years we’ve built it into new residential developments with
+          partners like IGO — lighting, climate, intercom, music and sensors
+          that work together quietly in the background.
+        </p>
+      </PageHeader>
+
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 pb-20">
+        <Reveal className="relative aspect-[21/9] overflow-hidden rounded-3xl">
           <Image
-            src="/images/mediola-logo.svg"
-            alt=""
-            width={1200}
-            height={1075}
-            aria-hidden="true"
-            className="w-[800px] md:w-[1200px] h-auto opacity-[0.04]"
+            src="/mediola_projects/ongoing_projects/azura-reception.jpg"
+            alt="Reception lobby at Azura, Dubai"
+            fill
+            sizes="(min-width: 1280px) 1216px, 100vw"
+            className="object-cover"
           />
+        </Reveal>
+      </section>
+
+      <section className="bg-sand-100 border-y border-sand-200">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+          <Reveal className="max-w-2xl">
+            <Eyebrow>What we believe</Eyebrow>
+            <h2 className="mt-5 text-4xl md:text-5xl leading-[1.08] text-navy-900">
+              Technology should make home feel more like home.
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid md:grid-cols-3 gap-10">
+            {beliefs.map((b, i) => (
+              <Reveal key={b.title} delay={i * 120}>
+                <p className="font-display text-5xl text-amber-500">0{i + 1}</p>
+                <h3 className="mt-5 text-2xl text-navy-900">{b.title}</h3>
+                <p className="mt-3 text-navy-400 leading-relaxed">{b.text}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Hero Section Container (z-10 sits above the background watermark) */}
-        <div className="relative z-10">
-          <section className="mx-auto max-w-4xl px-6 pt-16 pb-10 md:pt-24">
-            <p className="text-sm font-semibold tracking-wide text-amber-600 uppercase mb-4">
-              About Mediola
-            </p>
-            <h1 className="font-display font-bold text-4xl md:text-5xl leading-tight text-navy-900">
-              Who we are
-            </h1>
-            <p className="mt-6 text-lg text-navy-400 leading-relaxed max-w-2xl">
-              Mediola brings smart home technology to real estate projects
-              across the UAE. For the past few years, we&rsquo;ve partnered
-              with developers and contractors to design and install smart
-              living solutions — from lighting and climate control to
-              entertainment and security — built around how people actually
-              live.
-            </p>
-          </section>
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+        <Reveal className="max-w-3xl">
+          <p className="font-display text-3xl md:text-4xl leading-snug text-navy-900">
+            We started inside new buildings. Now we bring the same calm,
+            connected living to <em className="text-amber-700">your</em> home —
+            one family, one routine at a time.
+          </p>
+        </Reveal>
+      </section>
 
-          <section className="mx-auto max-w-4xl px-6 py-10">
-            <h2 className="font-display font-semibold text-2xl text-navy-900">
-              Our approach
-            </h2>
-            <p className="mt-4 text-navy-400 leading-relaxed max-w-2xl">
-              No two projects get the same solution. We work with developers
-              from planning through handover, tailoring each system to the
-              property and its residents — backed by a trusted network of
-              proven smart home technology.
-            </p>
-          </section>
-
-          <section className="mx-auto max-w-4xl px-6 py-16">
-            <h2 className="font-display font-semibold text-2xl text-navy-900 mb-8">
-              Why developers choose us
-            </h2>
-            <div className="space-y-6">
-              {strengths.map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <CheckCircle2
-                    className="w-6 h-6 text-amber-600 shrink-0 mt-0.5"
-                    strokeWidth={1.75}
-                  />
-                  <div>
-                    <p className="font-semibold text-navy-900">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 text-sm text-navy-400">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-4xl px-6 py-16 md:py-20 text-center">
-            <h2 className="font-display font-semibold text-2xl md:text-3xl text-navy-900">
-              We&rsquo;re based in the UAE and growing across the GCC — one
-              project, one partnership at a time.
-            </h2>
-            <Link
-              href="/quote"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-navy-900 hover:bg-amber-600 transition-colors"
-            >
-              Start a Project With Us
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </section>
-        </div>
-      </main>
-
-      <Footer />
+      <FinalCta />
     </>
   );
 }
