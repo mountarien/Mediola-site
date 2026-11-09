@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui";
 import { homes, systems } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/support" },
   title: "Resident support",
   description:
     "Living with a Mediola system? Tell us what’s happening and our local team will help — or help you add new scenes and features.",

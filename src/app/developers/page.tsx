@@ -4,6 +4,7 @@ import { Field, TextAreaField } from "@/components/FormField";
 import { PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/developers" },
   title: "For developers & contractors",
   description:
     "Planning smart home integration for a development in the UAE? Request a tailored proposal from Mediola.",

@@ -1,3 +1,10 @@
+// Public address of the site, used for canonical URLs, the sitemap and
+// social previews. Set NEXT_PUBLIC_SITE_URL in Vercel once a custom domain
+// is attached (e.g. "https://www.mediola.ae"), with no trailing slash.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://mediola-site.vercel.app"
+).replace(/\/+$/, "");
+
 // Single place for company contact details and shared content.
 // TODO: fill in real contact details before launch. Empty values are hidden in the UI.
 export const contact = {

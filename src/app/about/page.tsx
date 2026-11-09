@@ -5,6 +5,7 @@ import FinalCta from "@/components/FinalCta";
 import { Eyebrow, PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "Our story",
   description:
     "Mediola designs and installs smart home systems in the UAE, built around how people actually live.",

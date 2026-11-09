@@ -8,6 +8,7 @@ import { PageHeader } from "@/components/ui";
 import { homes } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/homes" },
   title: "Mediola homes",
   description:
     "The Paragon, Society House, Pelagos and Azura — residences in Dubai with Mediola smart living built in, in partnership with IGO.",

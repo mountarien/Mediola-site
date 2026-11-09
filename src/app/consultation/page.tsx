@@ -5,6 +5,7 @@ import { Field, TextAreaField, ChoiceGroup } from "@/components/FormField";
 import { PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/consultation" },
   title: "Book a free home visit",
   description:
     "Tell us a little about your home. We’ll visit, listen to how you live, and show you what Mediola could do — free and with no obligation.",

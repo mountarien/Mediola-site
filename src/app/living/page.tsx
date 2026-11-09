@@ -6,6 +6,7 @@ import FinalCta from "@/components/FinalCta";
 import { Eyebrow, PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/living" },
   title: "Smart living",
   description:
     "Lighting moods, a home that cools itself before you arrive, video intercom, music in every room, voice control and alerts that protect your home.",
